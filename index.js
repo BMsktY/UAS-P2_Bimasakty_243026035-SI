@@ -1,3 +1,5 @@
+// Index milik BIMASAKTYPUTRA_
+
 const express = require('express')
 const app = express()
 const port = 5656
