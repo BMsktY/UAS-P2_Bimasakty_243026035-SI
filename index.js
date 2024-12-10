@@ -1,4 +1,4 @@
-// Index milik BIMASAKTYPUTRA_
+// Index milik BIMASAKTYPUTRA_.
 
 const express = require('express')
 const app = express()

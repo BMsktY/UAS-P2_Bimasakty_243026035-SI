@@ -1,4 +1,4 @@
-// posts milik BIMASAKTYPUTRA_
+// posts milik BIMASAKTYPUTRA_.
 
 const express = require('express')
 const router = express.Router()

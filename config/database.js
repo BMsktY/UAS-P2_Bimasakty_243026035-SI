@@ -1,4 +1,4 @@
-// database milk BIMASAKTYPUTRA_
+// database milk BIMASAKTYPUTRA_.
 let mysql = require('mysql')
 
 let koneksi = mysql.createConnection({
