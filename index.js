@@ -9,7 +9,7 @@ const bodyParser = require('body-parser')
 
 // untuk cek website 
 app.get('/', (req,res) =>{
-    res.send(' ONE PIECE STORY ARC MARINEFORD.\n detail organisasi Angkatan laut ( Marine ).') // menampilkan penjelasan marine
+    res.send(' ONE PIECE STORY ARC MARINEFORD.\n detail organisasi Angkatan laut ( Marine ).') // menampilkan penjelasan data marineford 
 })
 
 // insert, edit Delete 
