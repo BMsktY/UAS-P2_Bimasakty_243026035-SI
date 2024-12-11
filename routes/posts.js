@@ -32,7 +32,7 @@ router.get('/',function (req,res){
 // INSERT 
 router.post('/dataMarine',[
     // membuat daftar partisipasi keanggotaan baru pada angkatan laut
-    // http://localhost:5656/organisasiKeadilan/onPiece/dataMarine
+    // http://localhost:3000/organisasiKeadilan/onPiece/dataMarine
     // untuk valdasi anggota dan melihat data dari para marine
     body('nama').notEmpty(),
     body('gender').notEmpty(),
@@ -86,7 +86,7 @@ router.post('/dataMarine',[
 
 //detail data
     // melihat daftar isi keanggotaan secara cepat dan detail dari salah satu daftar nama 
-    // http://localhost:5656/organisasiKeadilan/onPiece/dataMarine/
+    // http://localhost:3000/organisasiKeadilan/onPiece/dataMarine/
     // id : berupa urutan angka dari 1 hingga seterusnya 
 router.get('/:id',function(req,res){
     let id = req.params.id
@@ -119,7 +119,7 @@ router.get('/:id',function(req,res){
 
 // update penambahan data daftar anggota marine 
     // memperbaharui / memperbaiki salah satu detail data dari beberapa keanggotaan aktif
-    // http://localhost:5656/organisasiKeadilan/onPiece/updateKeanggotaan/id
+    // http://localhost:3000/organisasiKeadilan/onPiece/updateKeanggotaan/id
     // id : berupa urutan angka dari 1 hingga seterusnya yang akan diperbaharui datanya sesuai id yang diterapkan 
 router.patch('/updateKeanggotaan/:id',[
     body('nama').notEmpty(),
@@ -177,7 +177,7 @@ router.patch('/updateKeanggotaan/:id',[
   
 // Delete informasi dari keanggotaan data marine
     // menghapus data jejak data keanggotaan yang sudah keluar paksa dalam organisasi  
-    // http://localhost:5656/organisasiKeadilan/onPiece/deletePenghapusan/id
+    // http://localhost:3000/organisasiKeadilan/onPiece/deletePenghapusan/id
     // id : berupa urutan angka dari 1 hingga seterusnya yang akan dihilangkan datanya sesuai id yang diterapkan 
 router.delete('/deletePenghapusan/(:id)',
     function(req,res){

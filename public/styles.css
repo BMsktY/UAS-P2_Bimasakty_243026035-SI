@@ -1,0 +1,86 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Verdana', sans-serif;
+    background-color: #f9f9f9;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Background Image */
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 110%; 
+    background: url('image/Marine.jpg') center/cover no-repeat;
+    z-index: -1;
+}
+
+/* Centered Content */
+.content {
+    z-index: 1;
+}
+
+/* Centered Logo */
+.centered-logo img {
+    width: 450px;
+    height: 450px;
+    object-fit: cover;
+    margin-bottom: -10px; /* memberikan Spasi di bawah logo */
+    margin-top: -200px;
+    overflow: hidden;
+}
+
+.button-container .btn {
+    background-color: #1274ba; 
+    color: white; 
+    border: none; 
+    padding: 20px 40px;
+    font-size: 24px;
+    border-radius: 10px;
+    cursor: pointer; 
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; 
+    text-decoration: none;
+}
+
+.button-container .btn:hover {
+    background-color: #1274ba; 
+    transform: scale(1.05); 
+    box-shadow: 0 4px 15px rgb(255, 255, 255);
+    color: #ffffff; 
+}
+
+.description {
+    font-size: 14px; 
+    color: #1274ba; 
+    text-align: center; 
+    margin-top: 50px;
+    opacity: 0.8; 
+}
+
+.outlined-description {
+    text-shadow: 
+        -1px -1px 0 #ffffff,  
+        1px -1px 0 #ffffff,
+        -1px 1px 0 #ffffff,
+        1px 1px 0 #ffffff;
+}
