@@ -1,4 +1,4 @@
-// posts milik BIMASAKTYPUTRA_.
+// posts milik BIMASAKTYPUTRA_
 
 const express = require('express')
 const router = express.Router()
@@ -6,9 +6,9 @@ const router = express.Router()
 // untuk import database
 const koneksi = require('../config/database')
 
+
 // import express validator
 const {body, validationResult} = require('express-validator')
-
 
 // view
 router.get('/',function (req,res){
@@ -32,7 +32,7 @@ router.get('/',function (req,res){
 // INSERT 
 router.post('/dataMarine',[
     // membuat daftar partisipasi keanggotaan baru pada angkatan laut
-    // http://localhost:3000/organisasiKeadilan/onPiece/dataMarine
+    // http://localhost:3000/organisasiKeadilan/onePiece/dataMarine
     // untuk valdasi anggota dan melihat data dari para marine
     body('nama').notEmpty(),
     body('gender').notEmpty(),
@@ -102,11 +102,13 @@ router.get('/:id',function(req,res){
 
             //kalau posts id masih kosong / belum terdapat data pengguna 
             if(rows.length <= 0){
+                console.error('Error executing query:', err);
                 return res.status(404).json({
                     status:false,
                     message:'data anggota belum terdapat pada daftar marine'
                 })
             } else {
+                console.log('Data rows:', rows);
                 return res.status(200).json({
                     status:true,
                     message:'menampilkan data posts daftar anggota',
@@ -116,6 +118,7 @@ router.get('/:id',function(req,res){
         }
     )
 })
+
 
 // update penambahan data daftar anggota marine 
     // memperbaharui / memperbaiki salah satu detail data dari beberapa keanggotaan aktif

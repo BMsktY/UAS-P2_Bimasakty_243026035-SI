@@ -2,20 +2,22 @@
 
 const express = require('express')
 const app = express()
+const path = require('path');
 const port = 3000
+
+//import route posts
+const postsRouter = require('./routes/posts')
 
 // import body parser
 const bodyParser = require('body-parser')
+app.use(bodyParser.urlencoded({ extended: true })); 
 
 // insert, edit Delete 
-const path = require('path');
 app.use(express.static(path.join(__dirname,'public')));
 
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
-//import route posts
-const postsRouter = require('./routes/posts')
 // menggunakan route post di express
 app.use('/organisasiKeadilan/OnePiece', postsRouter) 
 
