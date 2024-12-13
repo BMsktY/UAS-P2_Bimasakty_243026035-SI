@@ -10,16 +10,25 @@ const postsRouter = require('./routes/posts')
 
 // import body parser
 const bodyParser = require('body-parser')
+app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true })); 
+
 
 // insert, edit Delete 
 app.use(express.static(path.join(__dirname,'public')));
+
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
 // menggunakan route post di express
 app.use('/organisasiKeadilan/OnePiece', postsRouter) 
+
+app.get('/', (req, res) => {
+    res.redirect('/organisasikeadilan/onepiece/lihatmarine');
+});
 
 app.get('/',(req,res)=> {
     const filepath = path.join(__dirname,'public','index.html');

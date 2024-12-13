@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marine Posts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+           padding: 0;
+            background: url('/public/image/Justice.jpg') no-repeat center center fixed; 
+            background-size: cover; 
+            color: #074a7a; 
+        }
+
+        .site-header {
+            background-color: #1274ba; 
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .post-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .post-item {
+            background: rgba(255, 255, 255, 0.9); /* Latar putih dengan transparansi */
+            border-radius: 8px;
+            box-shadow: 0 4px 6px #1274ba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+
+        .post-header {
+            text-align: center;
+            padding: 1rem;
+            background-color: #f4f4f4;
+        }
+
+        .post-header img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .post-body {
+            padding: 1rem;
+        }
+
+        .post-footer {
+            padding: 1rem;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        .detail-link {
+            text-decoration: none;
+            color: #1274ba;
+            font-weight: bold;
+        }
+
+        .detail-link:hover {
+            text-decoration: underline;
+        }
+
+        .site-footer {
+            background-color: #1274ba;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>Daftar keanggotaan marine</h1>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <% if (posts && posts.length > 0) { %>
+                <section class="post-section">
+                    <% posts.forEach(post => { %>
+                        <div class="post-item">
+                            <div class="post-header">
+                                <img src="<%= post.image %>" alt="<%= post.nama %>" class="post-image">
+                                <p><h3><%= post.nama %> </p>(<%= post.julukan %>)</h3>
+                            </div>
+                            <div class="post-body">
+                                <p><strong>Gender:</strong> <%= post.gender %></p>
+                                <p><strong>Tinggi:</strong> <%= post.tinggi %></p>
+                                <p><strong>Umur:</strong> <%= post.umur %></p>
+                                <p><strong>Pangkat:</strong> <%= post.pangkat %></p>
+                                <p><strong>Kepribadian:</strong> <%= post.kepribadian %></p>
+                                <p><strong>Devil Fruit:</strong> <%= post.devil_fruit %></p>
+                                <p><strong>Haki User:</strong> <%= post.haki_user %></p>
+                                <p><strong>Debut Character:</strong> <%= post.debut_char %></p>
+                            </div>
+                            <div class="post-footer">
+                                <a href="/posts/<%= post.id %>" class="detail-link">View Details</a>
+                            </div>
+                        </div>
+                    <% }); %>
+                </section>
+            <% } else { %>
+                <section class="no-posts">
+                    <p>Data Marine belum tersedia.</p>
+                </section>
+            <% } %>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2024 Marineford. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

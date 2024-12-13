@@ -2,6 +2,7 @@
 
 const express = require('express')
 const router = express.Router()
+const { getMarineData } = require('../data/marine')
 
 // untuk import database
 const koneksi = require('../config/database')
@@ -28,6 +29,22 @@ router.get('/',function (req,res){
         }
     })
 })
+
+router.get('/lihatmarine', (req, res) => {
+    getMarineData((err, marineData) => {
+        if (err) {
+            return res.status(500).render('error', {
+                title: 'Error',
+                message: 'kekacauan pirate membuat server error.',
+            });
+        }
+
+        res.render('posts', {
+            title: 'Justice of the sea',
+            posts: marineData,
+        });
+    });
+});
 
 // INSERT 
 router.post('/dataMarine',[
@@ -118,7 +135,6 @@ router.get('/:id',function(req,res){
         }
     )
 })
-
 
 // update penambahan data daftar anggota marine 
     // memperbaharui / memperbaiki salah satu detail data dari beberapa keanggotaan aktif
