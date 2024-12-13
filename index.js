@@ -31,7 +31,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/',(req,res)=> {
-    const filepath = path.join(__dirname,'public','index.html');
+    const filepath = path.join(__dirname,'public','index.html',);
     console.log(`Berhasil Update:${filepath}`);
     res.sendFile(filepath,(err) => {
         if (err) {
