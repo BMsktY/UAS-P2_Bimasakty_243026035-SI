@@ -23,7 +23,6 @@ app.use('/organisasiKeadilan/OnePiece', postsRouter)
 
 app.get('/',(req,res)=> {
     const filepath = path.join(__dirname,'public','index.html');
-    res.send(' ONE PIECE STORY ARC MARINEFORD.\n detail organisasi Angkatan laut ( Marine ).') // menampilkan penjelasan data marineford 
     console.log(`Berhasil Update:${filepath}`);
     res.sendFile(filepath,(err) => {
         if (err) {
